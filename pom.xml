@@ -18,6 +18,10 @@
         <spring-cloud-alibaba-nacos.version>2021.1</spring-cloud-alibaba-nacos.version>
     </properties>
 
+    <modules>
+        <module>mall-gateway</module>
+    </modules>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
