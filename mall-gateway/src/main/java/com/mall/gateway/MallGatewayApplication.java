@@ -1,4 +1,4 @@
-package com.mall.mallgateway;
+package com.mall.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

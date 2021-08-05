@@ -17,6 +17,9 @@
         <spring-cloud.version>2020.0.3</spring-cloud.version>
         <spring-cloud-alibaba-nacos.version>2021.1</spring-cloud-alibaba-nacos.version>
         <sa-token.version>1.24.0</sa-token.version>
+        <mybatis-spring-boot-starter.version>2.2.0</mybatis-spring-boot-starter.version>
+        <mybatis-generator.version>1.4.0</mybatis-generator.version>
+        <mysql.version>8.0.26</mysql.version>
     </properties>
 
     <modules>
@@ -59,6 +62,21 @@
                 <groupId>cn.dev33</groupId>
                 <artifactId>sa-token-dao-redis-jackson</artifactId>
                 <version>${sa-token.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis-generator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
