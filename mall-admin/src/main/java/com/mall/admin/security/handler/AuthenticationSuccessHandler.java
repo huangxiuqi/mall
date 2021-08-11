@@ -1,9 +1,9 @@
 package com.mall.admin.security.handler;
 
+import com.mall.admin.utils.MessageSourceUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,15 +15,15 @@ import java.io.IOException;
  * @author huangxiuqi
  * @createTime 2021/8/9 20:56
  */
-public class MallAuthenticationSuccessHandler extends MallAbstractHandler implements AuthenticationSuccessHandler {
+public class AuthenticationSuccessHandler extends AbstractHandler implements org.springframework.security.web.authentication.AuthenticationSuccessHandler {
 
-    private static final Logger log = LoggerFactory.getLogger(MallAuthenticationSuccessHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(AuthenticationSuccessHandler.class);
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response,
                                         Authentication authentication) throws IOException, ServletException {
-        // TODO 多语言，返回Token
-        sendResponse(response, 200, "登录成功");
+        // TODO 返回Token
+        sendResponse(response, 200, MessageSourceUtils.getMessage("LoginSuccess"));
     }
 }

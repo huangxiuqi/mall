@@ -12,5 +12,7 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  messages:
+    basename: i18n/message,org/springframework/security/messages
 mybatis:
   mapper-locations: mapper/**/*.xml

@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.web.AuthenticationEntryPoint;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +16,7 @@ import java.io.IOException;
  * @author huangxiuqi
  * @createTime 2021/8/9 20:58
  */
-public class MallAuthenticationEntryPoint extends MallAbstractHandler implements AuthenticationEntryPoint {
-
-    private static final Logger log = LoggerFactory.getLogger(MallAuthenticationEntryPoint.class);
+public class AuthenticationEntryPoint extends AbstractHandler implements org.springframework.security.web.AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request,

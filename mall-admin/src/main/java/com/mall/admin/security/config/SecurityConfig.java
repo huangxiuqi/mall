@@ -54,18 +54,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // 修改用户名密码登录Url，注册认证成功/失败处理器
         http.formLogin()
                 .loginProcessingUrl("/api/v1/login")
-                .successHandler(new MallAuthenticationSuccessHandler())
-                .failureHandler(new MallAuthenticationFailureHandler());
+                .successHandler(new AuthenticationSuccessHandler())
+                .failureHandler(new AuthenticationFailureHandler());
 
         // 修改退出登录Url，注册退出登录成功处理器
         http.logout()
                 .logoutUrl("/api/v1/logout")
-                .logoutSuccessHandler(new MallLogoutSuccessHandler());
+                .logoutSuccessHandler(new LogoutSuccessHandler());
 
         // 注册认证异常处理器
         http.exceptionHandling()
-                .authenticationEntryPoint(new MallAuthenticationEntryPoint())
-                .accessDeniedHandler(new MallAccessDeniedHandler());
+                .authenticationEntryPoint(new AuthenticationEntryPoint())
+                .accessDeniedHandler(new AccessDeniedHandler());
 
         // 不创建session
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);

@@ -11,11 +11,11 @@ import java.util.Map;
  * @author huangxiuqi
  * @createTime 2021/8/9 21:20
  */
-public abstract class MallAbstractHandler {
+public abstract class AbstractHandler {
 
     private final ObjectMapper objectMapper;
 
-    public MallAbstractHandler() {
+    public AbstractHandler() {
         objectMapper = new ObjectMapper();
     }
 
