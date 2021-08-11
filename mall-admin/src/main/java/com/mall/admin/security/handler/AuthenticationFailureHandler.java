@@ -1,11 +1,8 @@
 package com.mall.admin.security.handler;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -16,8 +13,6 @@ import java.io.IOException;
  * @createTime 2021/8/9 20:57
  */
 public class AuthenticationFailureHandler extends AbstractHandler implements org.springframework.security.web.authentication.AuthenticationFailureHandler {
-
-    private static final Logger log = LoggerFactory.getLogger(AuthenticationFailureHandler.class);
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest request,
