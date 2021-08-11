@@ -20,7 +20,7 @@ public class AccessDeniedHandler extends AbstractHandler implements org.springfr
     @Override
     public void handle(HttpServletRequest request,
                        HttpServletResponse response,
-                       AccessDeniedException accessDeniedException) throws IOException, ServletException {
-        sendResponse(response, HttpStatus.FORBIDDEN.value(), accessDeniedException.getLocalizedMessage());
+                       AccessDeniedException accessDeniedException) throws IOException {
+        sendResponse(response, HttpStatus.FORBIDDEN, accessDeniedException.getLocalizedMessage());
     }
 }

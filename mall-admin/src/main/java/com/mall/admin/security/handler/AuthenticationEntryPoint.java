@@ -21,12 +21,12 @@ public class AuthenticationEntryPoint extends AbstractHandler implements org.spr
     @Override
     public void commence(HttpServletRequest request,
                          HttpServletResponse response,
-                         AuthenticationException authException) throws IOException, ServletException {
+                         AuthenticationException authException) throws IOException {
         if (authException instanceof InsufficientAuthenticationException) {
             // 用户未认证，返回401
-            sendResponse(response, HttpStatus.UNAUTHORIZED.value(), authException.getLocalizedMessage());
+            sendResponse(response, HttpStatus.UNAUTHORIZED, authException.getLocalizedMessage());
         } else {
-            sendResponse(response, HttpStatus.BAD_REQUEST.value(), authException.getLocalizedMessage());
+            sendResponse(response, HttpStatus.BAD_REQUEST, authException.getLocalizedMessage());
         }
     }
 }

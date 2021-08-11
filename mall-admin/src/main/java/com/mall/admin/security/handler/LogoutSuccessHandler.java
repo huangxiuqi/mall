@@ -3,6 +3,7 @@ package com.mall.admin.security.handler;
 import com.mall.admin.utils.MessageSourceUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 
 import javax.servlet.ServletException;
@@ -22,10 +23,10 @@ public class LogoutSuccessHandler extends AbstractHandler implements org.springf
     @Override
     public void onLogoutSuccess(HttpServletRequest request,
                                 HttpServletResponse response,
-                                Authentication authentication) throws IOException, ServletException {
+                                Authentication authentication) throws IOException {
         if (authentication != null) {
             log.info(authentication.toString());
         }
-        sendResponse(response, 200, MessageSourceUtils.getMessage("LogoutSuccess"));
+        sendResponse(response, HttpStatus.OK, MessageSourceUtils.getMessage("LogoutSuccess"));
     }
 }

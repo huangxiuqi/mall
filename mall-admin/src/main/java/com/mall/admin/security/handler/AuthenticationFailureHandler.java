@@ -22,8 +22,8 @@ public class AuthenticationFailureHandler extends AbstractHandler implements org
     @Override
     public void onAuthenticationFailure(HttpServletRequest request,
                                         HttpServletResponse response,
-                                        AuthenticationException exception) throws IOException, ServletException {
+                                        AuthenticationException exception) throws IOException {
         // 认证失败返回原因
-        sendResponse(response, HttpStatus.BAD_REQUEST.value(), exception.getLocalizedMessage());
+        sendResponse(response, HttpStatus.BAD_REQUEST, exception.getLocalizedMessage());
     }
 }

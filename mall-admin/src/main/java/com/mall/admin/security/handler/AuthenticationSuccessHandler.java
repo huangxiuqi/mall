@@ -3,6 +3,7 @@ package com.mall.admin.security.handler;
 import com.mall.admin.utils.MessageSourceUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 
 import javax.servlet.ServletException;
@@ -22,8 +23,8 @@ public class AuthenticationSuccessHandler extends AbstractHandler implements org
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response,
-                                        Authentication authentication) throws IOException, ServletException {
+                                        Authentication authentication) throws IOException {
         // TODO 返回Token
-        sendResponse(response, 200, MessageSourceUtils.getMessage("LoginSuccess"));
+        sendResponse(response, HttpStatus.OK, MessageSourceUtils.getMessage("LoginSuccess"));
     }
 }
