@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * SpringSecurity登录接口Swagger描述
+ * 实际功能由SpringSecurity实现
  * @author huangxiuqi
  */
 @Api(tags = "用户认证")
