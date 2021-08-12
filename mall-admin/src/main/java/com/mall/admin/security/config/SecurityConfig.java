@@ -48,6 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers("/v2/api-docs")
                 .permitAll()
+                .antMatchers("/test/**")
+                .permitAll()
                 .anyRequest()
                 .authenticated();
 

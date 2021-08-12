@@ -18,6 +18,20 @@ public class ResponseDTO<T> {
     @ApiModelProperty(value = "响应数据", example = "{}")
     private T data;
 
+    public ResponseDTO(T data) {
+        this(200, "success", data);
+    }
+
+    public ResponseDTO(Integer code, String message) {
+        this(code, message, null);
+    }
+
+    public ResponseDTO(Integer code, String message, T data) {
+        this.message = message;
+        this.code = code;
+        this.data = data;
+    }
+
     public String getMessage() {
         return message;
     }
